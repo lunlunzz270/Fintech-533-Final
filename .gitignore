@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Large local data/cache files
+data/prices.csv
+data/fetch_status.csv
+
+# Generated backtest outputs
+output/*.csv
+output/*.png
