@@ -7,7 +7,7 @@ import pandas as pd
 
 import config
 from ic_analysis import compute_daily_ic, summarize_ic
-from metrics import summarize_return_series
+from metrics import summarize_return_series, summarize_trade_stats
 
 
 def build_test_windows() -> list[tuple[pd.Timestamp, pd.Timestamp]]:
@@ -120,6 +120,12 @@ def construct_sector_neutral_weekly_portfolio(
             longs.loc[stop_hit, "stop_hit"] = True
             longs.loc[stop_hit, "forward_return"] = -config.STOP_LOSS_PCT
 
+        # Assign trade fates: success, timeout, or stop-loss
+        longs["fate"] = "timeout"
+        longs.loc[longs["forward_return"] > 0, "fate"] = "success"
+        longs.loc[longs["stop_hit"], "fate"] = "stop-loss"
+        longs["trade_lifetime"] = 1.0
+
         net_return = float(longs["forward_return"].mean())
         exit_open = longs["entry_open"] * (1.0 + longs["forward_return"])
         weight = 1.0 / len(longs)
@@ -140,6 +146,8 @@ def construct_sector_neutral_weekly_portfolio(
                     "raw_forward_return": selected.raw_forward_return,
                     "return_pct": selected.forward_return,
                     "stop_hit": bool(selected.stop_hit),
+                    "fate": selected.fate,
+                    "trade_lifetime": selected.trade_lifetime,
                     "fold": f"{test_start.date()} to {test_end.date()}",
                 }
             )
@@ -212,6 +220,8 @@ def empty_blotter() -> pd.DataFrame:
             "raw_forward_return",
             "return_pct",
             "stop_hit",
+            "fate",
+            "trade_lifetime",
             "fold",
         ]
     )
@@ -220,6 +230,7 @@ def empty_blotter() -> pd.DataFrame:
 def summarize_strategy_vs_benchmark(
     daily_returns: pd.DataFrame,
     benchmark_returns: pd.DataFrame,
+    blotter: pd.DataFrame = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Append benchmark/excess returns and summarize stitched OOS performance."""
     if daily_returns.empty:
@@ -239,6 +250,11 @@ def summarize_strategy_vs_benchmark(
         metrics = summarize_return_series(merged[column])
         for metric, value in metrics.items():
             rows.append({"series": label, "metric": metric, "value": value})
+
+    if blotter is not None:
+        trade_stats = summarize_trade_stats(blotter)
+        for metric, value in trade_stats.items():
+            rows.append({"series": "strategy", "metric": metric, "value": value})
 
     return merged, pd.DataFrame(rows)
 
@@ -309,6 +325,7 @@ def run_walk_forward_backtest(
         fold_with_benchmark, fold_summary = summarize_strategy_vs_benchmark(
             fold_daily,
             benchmark_returns,
+            blotter=fold_blotter,
         )
         summary_lookup = fold_summary.pivot(index="metric", columns="series", values="value")
         fold_rows.append(
@@ -349,6 +366,7 @@ def run_walk_forward_backtest(
     daily_returns, performance_summary = summarize_strategy_vs_benchmark(
         daily_returns,
         benchmark_returns,
+        blotter=blotter,
     )
     ledger = build_ledger(daily_returns)
     return (

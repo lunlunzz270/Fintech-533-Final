@@ -61,7 +61,36 @@ def summarize_return_series(returns: pd.Series) -> dict[str, float]:
     }
 
 
-def performance_summary_table(daily_returns: pd.DataFrame) -> pd.DataFrame:
+def summarize_trade_stats(blotter: pd.DataFrame) -> dict[str, float]:
+    """Calculate trade-level statistics from the blotter."""
+    if blotter.empty:
+        return {
+            "expected_return_per_trade": np.nan,
+            "average_trade_lifetime": np.nan,
+            "success_rate": np.nan,
+            "timeout_rate": np.nan,
+            "stop_loss_rate": np.nan,
+        }
+
+    total_trades = len(blotter)
+    expected_return = float(blotter["return_pct"].mean())
+    avg_lifetime = float(blotter["trade_lifetime"].mean())
+    
+    fate_counts = blotter["fate"].value_counts()
+    success_rate = float(fate_counts.get("success", 0) / total_trades)
+    timeout_rate = float(fate_counts.get("timeout", 0) / total_trades)
+    stop_loss_rate = float(fate_counts.get("stop-loss", 0) / total_trades)
+
+    return {
+        "expected_return_per_trade": expected_return,
+        "average_trade_lifetime": avg_lifetime,
+        "success_rate": success_rate,
+        "timeout_rate": timeout_rate,
+        "stop_loss_rate": stop_loss_rate,
+    }
+
+
+def performance_summary_table(daily_returns: pd.DataFrame, blotter: pd.DataFrame = None) -> pd.DataFrame:
     """Build the requested gross/net performance summary table."""
     gross_metrics = summarize_return_series(daily_returns["gross_return"])
     net_metrics = summarize_return_series(daily_returns["net_return"])
@@ -103,6 +132,18 @@ def performance_summary_table(daily_returns: pd.DataFrame) -> pd.DataFrame:
             "net": np.nan,
         },
     ]
+
+    if blotter is not None:
+        trade_stats = summarize_trade_stats(blotter)
+        for metric, value in trade_stats.items():
+            extra_rows.append(
+                {
+                    "metric": metric,
+                    "gross": value,
+                    "net": value,
+                }
+            )
+
     return pd.DataFrame(metric_rows + extra_rows)
 
 

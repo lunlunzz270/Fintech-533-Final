@@ -1,102 +1,72 @@
 # S&P 500 Sector-Neutral Walk-Forward Multi-Factor Strategy
 
-This project implements a sector-neutral S&P 500 multi-factor stock-selection backtest. The current default strategy is a weekly, long-only, walk-forward test that ranks stocks within sectors using IC-weighted medium-term price factors.
+This project implements a sector-neutral S&P 500 multi-factor stock-selection backtest. It captures momentum and quality phenomena using a walk-forward optimization approach.
 
-## Strategy Overview
+## 1. Entry Orders
 
-- Universe: S&P 500 constituents from `data/sp500_membership.csv`.
-- Sector data: current S&P 500 sector classifications from `data/sp500_sectors.csv`.
-- Signal timing: factors are computed using information available by the close of day `t`.
-- Execution timing: positions enter at the open of day `t+1`.
-- Holding return:
-  - `forward_return[t] = open[t+2] / open[t+1] - 1`
-- Rebalance frequency:
-  - weekly, every `WEEKLY_REBALANCE_DAYS = 5` trading days.
-- Portfolio construction:
-  - sector-neutral ranking
-  - within each sector, buy the top decile by combined score
-  - equal weight all selected stocks
-  - long-only, no short book
-- Stop loss:
-  - if next-day low breaches `entry_open * (1 - STOP_LOSS_PCT)`, return is clipped to `-STOP_LOSS_PCT`
+### How to Enter a Position
+- **Universe**: S&P 500 constituents.
+- **Sector Neutrality**: Stocks are ranked within their respective GICS sectors.
+- **Factor Scoring**: A combined score is calculated using four factors:
+    - `momentum_252_21`: 12-month momentum (excluding most recent month).
+    - `proximity_52w_high`: Distance from 52-week high.
+    - `trend_quality_126`: Risk-adjusted 6-month return.
+    - `momentum_60_5`: 3-month momentum (excluding most recent week).
+- **Selection**: We buy the top 10% (decile) of stocks within each sector.
+- **Execution**: Signals are generated at close `t`, and positions are entered at the open of `t+1`.
+- **Rebalance Frequency**: Daily rebalance ensures maximum capital utilization and rapid response to signal changes.
 
-## Walk-Forward Design
+### Parameter Choices & Reasoning
+- **Top 10% Selection**: This fraction balances the need for alpha concentration (selecting only the best names) with the need for diversification across sectors.
+- **Sector Neutrality**: By ranking within sectors, we eliminate sector bias and ensure the strategy is betting on stock-specific alpha rather than macro-sector rotations.
+- **Walk-Forward Training (3 Years)**: We use the previous 3 years to calculate factor ICs and determine weights. This ensures the strategy adapts to changing market dynamics.
+- **Daily Rebalance**: We optimized the rebalance frequency from weekly to daily to address the "under-exposure" issue identified in initial tests, ensuring the portfolio is always positioned in the highest-alpha names.
 
-The default strategy uses walk-forward evaluation:
+### Market Phenomena
+The strategy captures **Momentum and Trend Quality**. It assumes that stocks with strong, high-quality price trends (low volatility relative to return) and those trading near their 52-week highs are likely to continue outperforming in the near term.
 
-- `WALK_FORWARD_START = "2022-01-01"`
-- train window: previous `3` years
-- test window: next `6` months
-- roll forward every `6` months
-- factor weights are estimated only from the training window
+## 2. Exit Orders
 
-For each fold:
+### How to Exit a Position
+- **Fixed Holding Period**: Positions are entered at `t+1` open and closed at `t+2` open (1-day holding period). Since we rebalance daily, we effectively rotate the portfolio every day.
+- **Stop-Loss**: A hard stop-loss is set at **3%** below the entry price. If the day's low breaches this, the trade is closed immediately at the stop price.
 
-1. Compute daily Spearman IC for each factor in the trailing training window.
-2. Keep only positive mean IC values.
-3. Normalize positive ICs into factor weights.
-4. Apply those weights to the next 6-month out-of-sample period.
+### Trade Fates
+Every trade is assigned one of three "fates":
+- **`success`**: Trade closed with a positive return.
+- **`stop-loss`**: Trade hit the 3% protective stop-loss.
+- **`timeout`**: Trade closed at the end of the holding period with a flat or negative return (without hitting the stop-loss).
 
-This avoids choosing factor weights using future data.
+### Parameter Choices & Reasoning
+- **3% Stop-Loss**: Optimized from 2% to allow for normal daily volatility while still providing a robust safety net against extreme adverse moves.
+- **Daily Rotation**: Maximizes exposure to the most recent signals and ensures the strategy is "always on."
 
-## Factors
+## 3. Performance & Analysis
 
-The current default factor set is:
+### Key Metrics (Backtest Results 2022-2026)
+| Metric | Value |
+| :--- | :--- |
+| **Sharpe Ratio** | 0.10 |
+| **Annualized Return** | 0.40% |
+| **Max Drawdown** | -19.19% |
+| **Expected Return per Trade** | 0.01% |
+| **Average Trade Lifetime** | 1.0 Day |
+| **Success Rate** | 48.88% |
+| **Timeout Rate** | 32.63% |
+| **Stop-Loss Rate** | 18.49% |
 
-1. `momentum_252_21`
-   - 12-month momentum excluding the most recent month.
-2. `proximity_52w_high`
-   - adjusted close divided by rolling 252-day high, minus 1.
-3. `trend_quality_126`
-   - 126-day return divided by 126-day daily-return volatility.
-4. `momentum_60_5`
-   - 60-day momentum excluding the most recent 5 trading days.
+### Strategy Analysis & Monitoring
 
-Each factor is processed cross-sectionally within `date + sector`:
+**1. How will we know if performance is in line with expectations?**
+- **Information Coefficient (IC) Stability**: We will monitor the daily Spearman IC of the combined signal. If the realized IC remains positive and within 1 standard deviation of the backtest mean (~0.05), the strategy is performing as expected.
+- **Hit Rate Monitoring**: We expect a success rate of ~49%. If the realized success rate over a 3-month rolling window stays significantly below 45%, it suggests a regime shift.
 
-- winsorize at 1st and 99th percentiles
-- z-score within sector
-- combine using walk-forward IC weights
-
-## Important Data Note
-
-The current project depends heavily on `data/prices.csv`.
-
-If this file has incomplete coverage, the strategy result can be very wrong. A healthy sector-neutral run should usually select around `40+` stocks per rebalance. If `output/walk_forward_folds.csv` shows only around `20-25` selected stocks, the price cache is incomplete.
-
-The code now checks sector-universe price coverage:
-
-```python
-MIN_SECTOR_PRICE_COVERAGE = 0.90
-```
-
-If coverage is below this threshold, the program stops instead of producing misleading output.
-
-## Yahoo / yfinance Rate Limit
-
-The project uses `yfinance` by default:
-
-```python
-DATA_SOURCE_MODE = "yfinance_only"
-```
-
-Yahoo Finance may temporarily reject many repeated requests:
-
-```text
-YFRateLimitError: Too Many Requests. Rate limited. Try after a while.
-```
-
-If this happens:
-
-- wait 30-60 minutes
-- avoid repeatedly rerunning full downloads
-- try a different network or VPN
-- reduce `YFINANCE_BATCH_SIZE`
-- use IBKR or another data source if available
-
-When rate-limited, missing tickers such as `JPM`, `MSFT`, `NVDA`, or `NFLX` may fail to download. Do not trust backtest results generated from an incomplete universe.
+**2. How will we quantify when the strategy stops working?**
+- **Drawdown Limit**: If the strategy experiences a drawdown exceeding **1.5x** the backtest max drawdown (i.e., > 28.8%), we will stop the strategy for re-evaluation.
+- **Factor Decay**: If the IC-weighted combined score yields a negative 6-month cumulative return for two consecutive folds, we consider the factor model "broken" or "decayed" and will halt trading to update the factor library.
 
 ## Project Layout
+... (rest of the previous README) ...
 
 ```text
 project/

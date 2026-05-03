@@ -84,6 +84,11 @@ def print_walk_forward_metrics(performance_summary: pd.DataFrame) -> None:
         "sharpe_ratio",
         "max_drawdown",
         "hit_rate",
+        "expected_return_per_trade",
+        "average_trade_lifetime",
+        "success_rate",
+        "timeout_rate",
+        "stop_loss_rate",
     ]
 
     print("\nWalk-Forward Performance Metrics")
@@ -94,7 +99,8 @@ def print_walk_forward_metrics(performance_summary: pd.DataFrame) -> None:
         strategy = summary.at[metric, "strategy"] if metric in summary.index and "strategy" in summary.columns else float("nan")
         benchmark = summary.at[metric, config.BENCHMARK_TICKER] if metric in summary.index and config.BENCHMARK_TICKER in summary.columns else float("nan")
         excess = summary.at[metric, "excess"] if metric in summary.index and "excess" in summary.columns else float("nan")
-        if metric == "sharpe_ratio":
+        
+        if metric in {"sharpe_ratio", "average_trade_lifetime"}:
             strategy_str = format_num(strategy)
             benchmark_str = format_num(benchmark)
             excess_str = format_num(excess)
