@@ -4,19 +4,19 @@ page-layout: full
 ---
 
 ::: {.hero-section}
-# Institutional-Grade Alpha
-### S&P 500 Sector-Neutral Walk-Forward Strategy
+# Institutional Alpha
+### S&P 500 Sector-Neutral Walk-Forward
 <p>Trade the open. Let factors decide.</p>
 :::
 
-<h2 class="section-title"><i class="fas fa-chart-line"></i> Key Performance Indicators</h2>
+<h2 class="section-title">Key Performance Indicators</h2>
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.metric-card}
 ::: {.metric-icon}
-<i class="fas fa-chart-bar"></i>
+<i class="fas fa-chart-line"></i>
 :::
 ::: {.metric-value}
 78.13%
@@ -50,7 +50,7 @@ Sharpe Ratio
 14.36%
 :::
 ::: {.metric-label}
-Annualized Return (CAGR)
+Annualized Return
 :::
 :::
 :::
@@ -99,21 +99,21 @@ Trade Success Rate
 
 :::
 
-<h2 class="section-title"><i class="fas fa-analytics"></i> Deep Performance Analysis</h2>
+<h2 class="section-title">Performance Analysis</h2>
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-lg-6}
 ::: {.chart-container}
-<h4><i class="fas fa-area-chart"></i> Cumulative Equity Curve</h4>
+<h4><i class="fas fa-chart-area"></i> Cumulative Equity Curve</h4>
 ![](output/cumulative_returns.png){width="100%"}
-*Strategy Performance vs. SPY Benchmark*
+*Strategy vs. SPY Benchmark (2022-2026)*
 :::
 :::
 
 ::: {.g-col-12 .g-col-lg-6}
 ::: {.chart-container}
-<h4><i class="fas fa-mountain"></i> Drawdown Profile</h4>
+<h4><i class="fas fa-chart-bar"></i> Drawdown Profile</h4>
 ![](output/drawdown.png){width="100%"}
 *Historical Risk/Volatility Exposure*
 :::
@@ -121,13 +121,42 @@ Trade Success Rate
 
 :::
 
-<h2 class="section-title"><i class="fas fa-cog"></i> Strategy Methodology</h2>
+<h2 class="section-title">Recent Trade Blotter</h2>
+
+::: {.data-table-container}
+<div class="scrollable-table">
+| Trade ID | Signal Date | Ticker | Sector | Entry Price | Exit Price | Return % | Fate |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| 32 | 2022-01-03 | ALB | Materials | 239.02 | 240.00 | 0.41% | success |
+| 15 | 2022-01-03 | AMP | Financials | 308.54 | 323.20 | 4.75% | success |
+| 28 | 2022-01-03 | ANET | Info Tech | 35.56 | 34.50 | -3.00% | stop-loss |
+| 23 | 2022-01-03 | AOS | Industrials | 83.77 | 85.01 | 1.48% | success |
+| 3 | 2022-01-03 | AZO | Cons Disc | 2058.19 | 2075.00 | 0.82% | success |
+| 8 | 2022-01-03 | COST | Cons Stap | 564.23 | 563.69 | -0.10% | timeout |
+| 16 | 2022-01-03 | CVS | Health Care | 104.45 | 104.32 | -0.12% | timeout |
+| 9 | 2022-01-03 | DVN | Energy | 46.27 | 48.15 | 4.06% | success |
+| 22 | 2022-01-03 | EFX | Industrials | 285.38 | 288.98 | 1.26% | success |
+| 37 | 2022-01-03 | EXC | Utilities | 40.37 | 40.66 | 0.71% | success |
+| 35 | 2022-01-03 | EXR | Real Estate | 219.36 | 220.81 | 0.66% | success |
+| 5 | 2022-01-03 | F | Cons Disc | 22.52 | 24.06 | 6.84% | success |
+| 36 | 2022-01-03 | FE | Utilities | 41.27 | 40.99 | -0.68% | timeout |
+| 14 | 2022-01-03 | FITB | Financials | 45.07 | 46.88 | 4.02% | success |
+| 30 | 2022-01-03 | FTNT | Info Tech | 66.10 | 64.12 | -3.00% | stop-loss |
+| 1 | 2022-01-03 | GOOGL | Comm Serv | 145.40 | 144.42 | -0.67% | timeout |
+| 2 | 2022-01-03 | HD | Cons Disc | 408.64 | 414.00 | 1.31% | success |
+| 17 | 2022-01-03 | IQV | Health Care | 272.62 | 264.44 | -3.00% | stop-loss |
+| 29 | 2022-01-03 | IT | Info Tech | 322.93 | 320.77 | -0.67% | timeout |
+| 25 | 2022-01-03 | JCI | Industrials | 79.95 | 80.35 | 0.50% | success |
+</div>
+:::
+
+<h2 class="section-title">Strategy Methodology</h2>
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.methodology-box}
-### <i class="fas fa-sign-in-alt"></i> 1. Entry Logic
+### Entry Logic
 The strategy employs a **Sector-Neutral** framework to eliminate macro-sector biases and focus on idiosyncratic alpha. 
 
 *   **Universe**: S&P 500 constituents.
@@ -139,7 +168,7 @@ The strategy employs a **Sector-Neutral** framework to eliminate macro-sector bi
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.methodology-box}
-### <i class="fas fa-sign-out-alt"></i> 2. Risk Management & Exit
+### Risk Management
 Strict risk controls are embedded to preserve capital and ensure strategy longevity.
 
 *   **Exit Mechanism**: Daily portfolio rotation ensures exposure is always aligned with the freshest signals.
@@ -150,7 +179,7 @@ Strict risk controls are embedded to preserve capital and ensure strategy longev
 
 :::
 
-<h2 class="section-title"><i class="fas fa-eye"></i> Monitoring & Robustness</h2>
+<h2 class="section-title">Monitoring & Robustness</h2>
 
 ::: {.methodology-box}
 **How do we know if it's working?**
