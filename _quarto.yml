@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Quant Alpha Strategy"
+  description: "Institutional-Grade Sector-Neutral Multi-Factor Strategy"
+  navbar:
+    background: primary
+    search: false
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: zephyr
+    css: styles.css
+    toc: true
+    number-sections: false
+    page-layout: full
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

@@ -49,16 +49,16 @@ Every trade is assigned one of three "fates":
 
 ### Key Metrics (Backtest Results 2022-2026)
 | Metric | Value |
-
 | :--- | :--- |
-| **Sharpe Ratio** | 0.10 |
-| **Annualized Return** | 0.40% |
-| **Max Drawdown** | -19.19% |
-| **Expected Return per Trade** | 0.01% |
+| **Sharpe Ratio** | 0.92 |
+| **Annualized Return** | 14.36% |
+| **Max Drawdown** | -16.36% |
+| **Expected Return per Trade** | 0.06% |
 | **Average Trade Lifetime** | 1.0 Day |
-| **Success Rate** | 48.88% |
-| **Timeout Rate** | 32.63% |
-| **Stop-Loss Rate** | 18.49% |
+| **Hit Rate (Daily)** | 53.78% |
+| **Success Rate (Trade)** | 51.94% |
+| **Timeout Rate** | 39.71% |
+| **Stop-Loss Rate** | 8.35% |
 
 ### Strategy Analysis & Monitoring
 

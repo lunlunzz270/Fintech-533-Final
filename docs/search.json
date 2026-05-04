@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Institutional-Grade Alpha",
+    "section": "",
+    "text": "A sophisticated multi-factor approach capturing momentum and quality premiums through dynamic daily optimization."
+  },
+  {
+    "objectID": "index.html#key-performance-indicators",
+    "href": "index.html#key-performance-indicators",
+    "title": "Institutional-Grade Alpha",
+    "section": "Key Performance Indicators",
+    "text": "Key Performance Indicators\n\n\n\n\n0.92\n\n\nSharpe Ratio\n\n\n\n\n\n\n14.36%\n\n\nAnnualized Return\n\n\n\n\n\n\n-16.36%\n\n\nMax Drawdown\n\n\n\n\n\n\n53.78%\n\n\nDaily Hit Rate\n\n\n\n\n\n\n51.94%\n\n\nTrade Success Rate\n\n\n\n\n\n\n1.0 Day\n\n\nAvg Trade Lifetime"
+  },
+  {
+    "objectID": "index.html#performance-analysis",
+    "href": "index.html#performance-analysis",
+    "title": "Institutional-Grade Alpha",
+    "section": "Performance Analysis",
+    "text": "Performance Analysis\n\nCumulative Equity Curve\n\n Strategy (Blue) vs. SPY Benchmark (Red)\n\n\n\nDrawdown Profile\n\n Historical Under-Water Profile"
+  },
+  {
+    "objectID": "index.html#strategy-methodology",
+    "href": "index.html#strategy-methodology",
+    "title": "Institutional-Grade Alpha",
+    "section": "Strategy Methodology",
+    "text": "Strategy Methodology\n\n1. Entry Logic\nThe strategy employs a Sector-Neutral framework to eliminate macro-sector biases and focus on idiosyncratic alpha.\n\nUniverse: S&P 500 constituents.\nFactor Library: IC-weighted combination of Momentum (12m and 3m), Proximity to 52-week High, and Trend Quality.\nOptimization: 3-year rolling walk-forward training window to adapt to regime shifts.\nSelection: Daily rebalancing into the top 10% of stocks within each sector.\n\n\n\n2. Risk Management & Exit\nStrict risk controls are embedded to preserve capital and ensure strategy longevity.\n\nExit Mechanism: Daily portfolio rotation ensures exposure is always aligned with the freshest signals.\nStop-Loss: A hard 3.0% protective stop-loss triggers an immediate exit if intra-day volatility breaches the threshold.\nFate Tracking: Every trade is classified as Success, Stop-Loss, or Timeout for rigorous post-trade analysis."
+  },
+  {
+    "objectID": "index.html#monitoring-robustness",
+    "href": "index.html#monitoring-robustness",
+    "title": "Institutional-Grade Alpha",
+    "section": "Monitoring & Robustness",
+    "text": "Monitoring & Robustness\nHow do we know if it’s working? We monitor the IC Stability. As long as the realized signal IC remains within 1 standard deviation of our historical mean (~0.05) and the rolling success rate stays above 48%, the model is considered healthy.\nWhen do we stop? A drawdown exceeding 24.5% (1.5x historical max) or two consecutive 6-month folds with negative excess returns will trigger an automatic strategy halt and factor re-evaluation."
+  }
+]
