@@ -123,6 +123,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#optimization-dynamics" id="toc-optimization-dynamics" class="nav-link" data-scroll-target="#optimization-dynamics">Optimization Dynamics</a></li>
   <li><a href="#trade-execution-analysis" id="toc-trade-execution-analysis" class="nav-link" data-scroll-target="#trade-execution-analysis">Trade Execution Analysis</a></li>
   <li><a href="#capital-growth-analysis" id="toc-capital-growth-analysis" class="nav-link" data-scroll-target="#capital-growth-analysis">Capital Growth Analysis</a></li>
+  <li><a href="#performance-alignment-monitoring" id="toc-performance-alignment-monitoring" class="nav-link" data-scroll-target="#performance-alignment-monitoring">1. Performance Alignment Monitoring</a></li>
+  <li><a href="#quantifying-strategy-failure" id="toc-quantifying-strategy-failure" class="nav-link" data-scroll-target="#quantifying-strategy-failure">2. Quantifying Strategy Failure</a></li>
   </ul>
 </nav>
     </div>
@@ -2035,6 +2037,27 @@ Account Ledger
 <section id="capital-growth-analysis" class="level3 analysis-box">
 <h3 class="anchored" data-anchor-id="capital-growth-analysis">Capital Growth Analysis</h3>
 <p>The daily ledger samples show the steady appreciation of the <strong>$100,000 initial capital</strong>. The low volatility in daily PnL reflects the benefit of the sector-neutral framework, which focuses on relative stock performance rather than market direction.</p>
+</section>
+<h2 class="section-title anchored">
+Strategic Monitoring &amp; Risk Governance
+</h2>
+<section id="performance-alignment-monitoring" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="performance-alignment-monitoring">1. Performance Alignment Monitoring</h3>
+<p><strong>Going forward, how will we know that the strategy’s performance is in line with backtest expectations?</strong></p>
+<p>To ensure real-world performance matches our 0.92 Sharpe Ratio expectation, we will implement a dual-track monitoring system:</p>
+<ul>
+<li><strong>IC Stability Tracking</strong>: We will calculate the daily Spearman Information Coefficient (IC). The backtest showed a mean IC of ~0.0086. If the rolling 21-day average IC remains positive and within one standard error of this mean, we consider the factor model to be capturing the intended market phenomena.</li>
+<li><strong>Rolling Hit-Rate Bounds</strong>: Our strategy expects a ~53.8% daily hit rate. We will monitor the realized hit rate over a rolling 60-day window. If performance stays within a 95% confidence interval of the backtest hit rate, the strategy is deemed “in-line.”</li>
+</ul>
+</section>
+<section id="quantifying-strategy-failure" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="quantifying-strategy-failure">2. Quantifying Strategy Failure</h3>
+<p><strong>How will we quantify when the strategy stops working?</strong></p>
+<p>A strategy is considered “broken” or “failed” if it breaches any of the following quantitative thresholds:</p>
+<ul>
+<li><strong>Maximum Drawdown Breach</strong>: If the strategy hits a drawdown of <strong>24.5%</strong> (1.5x our historical maximum of -16.36%), all trading will be halted. This level represents a statistical outlier that suggests the risk-control parameters are no longer sufficient.</li>
+<li><strong>Factor Signal Decay</strong>: If the composite Factor IC remains negative for more than <strong>two consecutive 6-month walk-forward folds</strong>, we conclude that the underlying momentum premiums have decayed and the model will be retired.</li>
+</ul>
 </section>
 <h2 class="section-title anchored">
 Methodology

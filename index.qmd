@@ -253,6 +253,28 @@ print(df[cols].to_markdown(index=False))
 The daily ledger samples show the steady appreciation of the **$100,000 initial capital**. The low volatility in daily PnL reflects the benefit of the sector-neutral framework, which focuses on relative stock performance rather than market direction.
 :::
 
+<h2 class="section-title">Strategic Monitoring & Risk Governance</h2>
+
+::: {.analysis-box}
+### 1. Performance Alignment Monitoring
+**Going forward, how will we know that the strategy's performance is in line with backtest expectations?**
+
+To ensure real-world performance matches our 0.92 Sharpe Ratio expectation, we will implement a dual-track monitoring system:
+
+*   **IC Stability Tracking**: We will calculate the daily Spearman Information Coefficient (IC). The backtest showed a mean IC of ~0.0086. If the rolling 21-day average IC remains positive and within one standard error of this mean, we consider the factor model to be capturing the intended market phenomena.
+*   **Rolling Hit-Rate Bounds**: Our strategy expects a ~53.8% daily hit rate. We will monitor the realized hit rate over a rolling 60-day window. If performance stays within a 95% confidence interval of the backtest hit rate, the strategy is deemed "in-line."
+:::
+
+::: {.analysis-box}
+### 2. Quantifying Strategy Failure
+**How will we quantify when the strategy stops working?**
+
+A strategy is considered "broken" or "failed" if it breaches any of the following quantitative thresholds:
+
+*   **Maximum Drawdown Breach**: If the strategy hits a drawdown of **24.5%** (1.5x our historical maximum of -16.36%), all trading will be halted. This level represents a statistical outlier that suggests the risk-control parameters are no longer sufficient.
+*   **Factor Signal Decay**: If the composite Factor IC remains negative for more than **two consecutive 6-month walk-forward folds**, we conclude that the underlying momentum premiums have decayed and the model will be retired.
+:::
+
 <h2 class="section-title">Methodology</h2>
 
 ::: {.grid}
