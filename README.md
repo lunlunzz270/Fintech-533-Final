@@ -43,8 +43,13 @@ Every trade is assigned one of three "fates":
 
 ## 3. Performance & Analysis
 
+### Key Performance Visualizations
+![Cumulative Returns](output/cumulative_returns.png)
+![Max Drawdown](output/drawdown.png)
+
 ### Key Metrics (Backtest Results 2022-2026)
 | Metric | Value |
+
 | :--- | :--- |
 | **Sharpe Ratio** | 0.10 |
 | **Annualized Return** | 0.40% |

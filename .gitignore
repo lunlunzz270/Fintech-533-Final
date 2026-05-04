@@ -7,5 +7,5 @@ data/prices.csv
 data/fetch_status.csv
 
 # Generated backtest outputs
-output/*.csv
-output/*.png
+output/factor_data.csv
+
