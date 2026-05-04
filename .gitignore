@@ -9,3 +9,6 @@ data/fetch_status.csv
 # Generated backtest outputs
 output/factor_data.csv
 
+
+/.quarto/
+**/*.quarto_ipynb
