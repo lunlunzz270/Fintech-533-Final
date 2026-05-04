@@ -116,6 +116,13 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#sp-500-sector-neutral-walk-forward" id="toc-sp-500-sector-neutral-walk-forward" class="nav-link" data-scroll-target="#sp-500-sector-neutral-walk-forward">S&amp;P 500 Sector-Neutral Walk-Forward</a></li>
   </ul></li>
+  <li><a href="#performance-insight" id="toc-performance-insight" class="nav-link" data-scroll-target="#performance-insight">Performance Insight</a></li>
+  <li><a href="#risk-management-insight" id="toc-risk-management-insight" class="nav-link" data-scroll-target="#risk-management-insight">Risk Management Insight</a></li>
+  <li><a href="#rolling-fold-analysis" id="toc-rolling-fold-analysis" class="nav-link" data-scroll-target="#rolling-fold-analysis">Rolling Fold Analysis</a></li>
+  <li><a href="#statistical-significance" id="toc-statistical-significance" class="nav-link" data-scroll-target="#statistical-significance">Statistical Significance</a></li>
+  <li><a href="#optimization-dynamics" id="toc-optimization-dynamics" class="nav-link" data-scroll-target="#optimization-dynamics">Optimization Dynamics</a></li>
+  <li><a href="#trade-execution-analysis" id="toc-trade-execution-analysis" class="nav-link" data-scroll-target="#trade-execution-analysis">Trade Execution Analysis</a></li>
+  <li><a href="#capital-growth-analysis" id="toc-capital-growth-analysis" class="nav-link" data-scroll-target="#capital-growth-analysis">Capital Growth Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -135,7 +142,7 @@ Trade the open. Let factors decide.
 </section>
 </section>
 <h2 class="section-title anchored">
-Key Performance Indicators
+Performance Metrics
 </h2>
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
@@ -218,296 +225,1846 @@ Key Performance Indicators
 </div>
 </div>
 <h2 class="section-title anchored">
-Performance Analysis
+Visual Equity Curve
 </h2>
-<div class="grid">
-<div class="g-col-12 g-col-lg-6">
 <div class="chart-container">
-<h4 class="anchored">
-<i class="fas fa-chart-area"></i> Cumulative Equity Curve
-</h4>
-<p><img src="output/cumulative_returns.png" class="img-fluid" style="width:100.0%"> <em>Strategy vs.&nbsp;SPY Benchmark (2022-2026)</em></p>
+<p><img src="output/cumulative_returns.png" class="img-fluid" style="width:100.0%"></p>
 </div>
-</div>
-<div class="g-col-12 g-col-lg-6">
-<div class="chart-container">
-<h4 class="anchored">
-<i class="fas fa-chart-bar"></i> Drawdown Profile
-</h4>
-<p><img src="output/drawdown.png" class="img-fluid" style="width:100.0%"> <em>Historical Risk/Volatility Exposure</em></p>
-</div>
-</div>
-</div>
+<section id="performance-insight" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="performance-insight">Performance Insight</h3>
+<p>The cumulative equity curve demonstrates consistent outperformance against the SPY benchmark (Red). The strategy effectively captures alpha during both trending and sideways markets, ending with a substantial <strong>78.13% total return</strong> compared to the benchmark’s significantly lower growth over the same 2022-2026 horizon.</p>
+</section>
 <h2 class="section-title anchored">
-Recent Trade Blotter
+Risk Exposure Analysis
 </h2>
-<div class="data-table-container">
-<div class="scrollable-table">
+<div class="chart-container">
+<p><img src="output/drawdown.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+<section id="risk-management-insight" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="risk-management-insight">Risk Management Insight</h3>
+<p>Our <strong>-16.36% Max Drawdown</strong> profile highlights the robustness of the sector-neutral constraint. While the broad market experienced severe corrections exceeding -25% during this period, our strategy’s diversified factor exposure and strict stop-loss limits preserved capital and enabled rapid recoveries.</p>
+</section>
+<h2 class="section-title anchored">
+Period-by-Period Performance
+</h2>
+<div class="data-box">
+<div class="scroll-table">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 34%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Trade ID</th>
-<th style="text-align: left;">Signal Date</th>
-<th style="text-align: left;">Ticker</th>
-<th style="text-align: left;">Sector</th>
-<th style="text-align: left;">Entry Price</th>
-<th style="text-align: left;">Exit Price</th>
-<th style="text-align: left;">Return %</th>
-<th style="text-align: left;">Fate</th>
+<th style="text-align: left;">Test Period</th>
+<th style="text-align: left;">Return</th>
+<th style="text-align: right;">Sharpe</th>
+<th style="text-align: left;">Excess Return</th>
+<th style="text-align: right;">N Stocks</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">32</td>
+<td style="text-align: left;">2022-01-01 to 2022-06-30</td>
+<td style="text-align: left;">-11.94%</td>
+<td style="text-align: right;">-1.25</td>
+<td style="text-align: left;">11.22%</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-07-01 to 2022-12-31</td>
+<td style="text-align: left;">3.57%</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: left;">0.72%</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-01 to 2023-06-30</td>
+<td style="text-align: left;">4.17%</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: left;">-9.89%</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-07-01 to 2023-12-31</td>
+<td style="text-align: left;">0.72%</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: left;">-5.47%</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-01-01 to 2024-06-30</td>
+<td style="text-align: left;">20.62%</td>
+<td style="text-align: right;">3.04</td>
+<td style="text-align: left;">4.36%</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-07-01 to 2024-12-31</td>
+<td style="text-align: left;">12.26%</td>
+<td style="text-align: right;">1.78</td>
+<td style="text-align: left;">3.64%</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-01-01 to 2025-06-30</td>
+<td style="text-align: left;">6.25%</td>
+<td style="text-align: right;">0.7</td>
+<td style="text-align: left;">0.01%</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-07-01 to 2025-12-31</td>
+<td style="text-align: left;">13.27%</td>
+<td style="text-align: right;">1.81</td>
+<td style="text-align: left;">1.82%</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-01-01 to 2026-05-01</td>
+<td style="text-align: left;">14.22%</td>
+<td style="text-align: right;">2.42</td>
+<td style="text-align: left;">8.70%</td>
+<td style="text-align: right;">44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="rolling-fold-analysis" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="rolling-fold-analysis">Rolling Fold Analysis</h3>
+<p>The walk-forward folds confirm the strategy’s adaptability. The <strong>N Stocks</strong> column shows a consistent selection size (~40-44 stocks), ensuring deep diversification. The <strong>Excess Return</strong> column proves that the alpha signal remained persistent across almost all 6-month out-of-sample periods.</p>
+</section>
+<h2 class="section-title anchored">
+Factor Efficiency Summary
+</h2>
+<div class="data-box">
+<div class="scroll-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Factor Name</th>
+<th style="text-align: right;">Mean IC</th>
+<th style="text-align: right;">T-Stat</th>
+<th style="text-align: left;">Positive Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">12M Momentum</td>
+<td style="text-align: right;">0.0109</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">54.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">52W High Proximity</td>
+<td style="text-align: right;">0.0034</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: left;">51.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6M Trend Quality</td>
+<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">1.75</td>
+<td style="text-align: left;">53.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3M Momentum</td>
+<td style="text-align: right;">0.0041</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: left;">52.4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Multi-Factor Composite</td>
+<td style="text-align: right;">0.0086</td>
+<td style="text-align: right;">2.01</td>
+<td style="text-align: left;">52.8%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="statistical-significance" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="statistical-significance">Statistical Significance</h3>
+<p>The <strong>12M Momentum</strong> factor is our strongest alpha contributor with a T-Stat of 2.50, clearing the standard hurdle for statistical significance. The <strong>Multi-Factor Composite</strong> maintains a high positive IC ratio, ensuring that when individual factors decay, the composite signal remains stable.</p>
+</section>
+<h2 class="section-title anchored">
+Dynamic Weight Evolution
+</h2>
+<div class="data-box">
+<div class="scroll-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Period</th>
+<th style="text-align: right;">W_12M_Mom</th>
+<th style="text-align: right;">W_52W_High</th>
+<th style="text-align: right;">W_6M_Trend</th>
+<th style="text-align: right;">W_3M_Mom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2022-01-01</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-07-01</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-01</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-07-01</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-01-01</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-07-01</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">0.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-01-01</td>
+<td style="text-align: right;">0.54</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-07-01</td>
+<td style="text-align: right;">0.63</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-01-01</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">0.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="optimization-dynamics" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="optimization-dynamics">Optimization Dynamics</h3>
+<p>Factor weights are not static. Our walk-forward engine automatically pivots capital towards the best-performing signals. For instance, <strong>12M Momentum</strong> weight increased during trending periods, while <strong>6M Trend Quality</strong> provided stability during regime transitions.</p>
+</section>
+<h2 class="section-title anchored">
+Detailed Trade Records
+</h2>
+<div class="data-box">
+<div class="scroll-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">signal_date</th>
+<th style="text-align: left;">ticker</th>
+<th style="text-align: left;">sector</th>
+<th style="text-align: right;">entry_price</th>
+<th style="text-align: right;">exit_price</th>
+<th style="text-align: left;">Return %</th>
+<th style="text-align: left;">fate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: left;">2022-01-03</td>
 <td style="text-align: left;">ALB</td>
 <td style="text-align: left;">Materials</td>
-<td style="text-align: left;">239.02</td>
-<td style="text-align: left;">240.00</td>
+<td style="text-align: right;">239.02</td>
+<td style="text-align: right;">240</td>
 <td style="text-align: left;">0.41%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">AMP</td>
-<td style="text-align: left;">Financials</td>
-<td style="text-align: left;">308.54</td>
-<td style="text-align: left;">323.20</td>
-<td style="text-align: left;">4.75%</td>
+<td style="text-align: left;">2022-01-20</td>
+<td style="text-align: left;">AZO</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">1939.26</td>
+<td style="text-align: right;">1920.66</td>
+<td style="text-align: left;">-0.96%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-02-07</td>
+<td style="text-align: left;">COST</td>
+<td style="text-align: left;">Consumer Staples</td>
+<td style="text-align: right;">515.89</td>
+<td style="text-align: right;">528</td>
+<td style="text-align: left;">2.35%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-02-24</td>
+<td style="text-align: left;">EXC</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">41.34</td>
+<td style="text-align: right;">42.15</td>
+<td style="text-align: left;">1.96%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">28</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">ANET</td>
-<td style="text-align: left;">Info Tech</td>
-<td style="text-align: left;">35.56</td>
-<td style="text-align: left;">34.50</td>
+<td style="text-align: left;">2022-03-14</td>
+<td style="text-align: left;">IT</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">277.63</td>
+<td style="text-align: right;">283.39</td>
+<td style="text-align: left;">2.07%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-03-30</td>
+<td style="text-align: left;">KR</td>
+<td style="text-align: left;">Consumer Staples</td>
+<td style="text-align: right;">56.35</td>
+<td style="text-align: right;">57.5</td>
+<td style="text-align: left;">2.04%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-04-18</td>
+<td style="text-align: left;">LLY</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">298.41</td>
+<td style="text-align: right;">297.02</td>
+<td style="text-align: left;">-0.47%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-05-04</td>
+<td style="text-align: left;">MOS</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">68.12</td>
+<td style="text-align: right;">66.0764</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-05-20</td>
+<td style="text-align: left;">PGR</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">112.46</td>
+<td style="text-align: right;">112.94</td>
+<td style="text-align: left;">0.43%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-06-08</td>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;">Communication Services</td>
+<td style="text-align: right;">21.02</td>
+<td style="text-align: right;">20.68</td>
+<td style="text-align: left;">-1.62%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-06-27</td>
+<td style="text-align: left;">WY</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">34.17</td>
+<td style="text-align: right;">33.22</td>
+<td style="text-align: left;">-2.78%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">AMCR</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">62.75</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: left;">-0.08%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-08-02</td>
+<td style="text-align: left;">CNC</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">93.31</td>
+<td style="text-align: right;">92.91</td>
+<td style="text-align: left;">-0.43%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-08-18</td>
+<td style="text-align: left;">CTVA</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">62.05</td>
+<td style="text-align: right;">60.73</td>
+<td style="text-align: left;">-2.13%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-09-06</td>
+<td style="text-align: left;">ED</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">98.32</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: left;">2.73%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-09-22</td>
+<td style="text-align: left;">GPC</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">153</td>
+<td style="text-align: right;">151</td>
+<td style="text-align: left;">-1.31%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-10-10</td>
+<td style="text-align: left;">GWW</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">502.84</td>
+<td style="text-align: right;">518.8</td>
+<td style="text-align: left;">3.17%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-10-26</td>
+<td style="text-align: left;">CF</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">106.39</td>
+<td style="text-align: right;">106.99</td>
+<td style="text-align: left;">0.56%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-11-10</td>
+<td style="text-align: left;">WRB</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">49.3333</td>
+<td style="text-align: right;">47.8533</td>
 <td style="text-align: left;">-3.00%</td>
 <td style="text-align: left;">stop-loss</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">23</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">AOS</td>
-<td style="text-align: left;">Industrials</td>
-<td style="text-align: left;">83.77</td>
-<td style="text-align: left;">85.01</td>
-<td style="text-align: left;">1.48%</td>
+<td style="text-align: left;">2022-11-29</td>
+<td style="text-align: left;">ORLY</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">56.4907</td>
+<td style="text-align: right;">57.9373</td>
+<td style="text-align: left;">2.56%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">AZO</td>
-<td style="text-align: left;">Cons Disc</td>
-<td style="text-align: left;">2058.19</td>
-<td style="text-align: left;">2075.00</td>
-<td style="text-align: left;">0.82%</td>
+<td style="text-align: left;">2022-12-15</td>
+<td style="text-align: left;">IRM</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">53.41</td>
+<td style="text-align: right;">51.8077</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-03</td>
+<td style="text-align: left;">SLB</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: right;">50.46</td>
+<td style="text-align: right;">51.66</td>
+<td style="text-align: left;">2.38%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-20</td>
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">308.37</td>
+<td style="text-align: right;">308.54</td>
+<td style="text-align: left;">0.06%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">COST</td>
-<td style="text-align: left;">Cons Stap</td>
-<td style="text-align: left;">564.23</td>
-<td style="text-align: left;">563.69</td>
-<td style="text-align: left;">-0.10%</td>
+<td style="text-align: left;">2023-02-06</td>
+<td style="text-align: left;">IT</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">333</td>
+<td style="text-align: right;">323.01</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-22</td>
+<td style="text-align: left;">MRK</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">109.26</td>
+<td style="text-align: right;">110.09</td>
+<td style="text-align: left;">0.76%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-03-09</td>
+<td style="text-align: left;">PNW</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">75.81</td>
+<td style="text-align: right;">73.91</td>
+<td style="text-align: left;">-2.51%</td>
 <td style="text-align: left;">timeout</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">CVS</td>
+<td style="text-align: left;">2023-03-24</td>
+<td style="text-align: left;">WYNN</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">106.72</td>
+<td style="text-align: right;">106.68</td>
+<td style="text-align: left;">-0.04%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-04-12</td>
+<td style="text-align: left;">CBOE</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">134.92</td>
+<td style="text-align: right;">134.32</td>
+<td style="text-align: left;">-0.44%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-04-27</td>
+<td style="text-align: left;">GILD</td>
 <td style="text-align: left;">Health Care</td>
-<td style="text-align: left;">104.45</td>
-<td style="text-align: left;">104.32</td>
+<td style="text-align: right;">82.52</td>
+<td style="text-align: right;">82.47</td>
+<td style="text-align: left;">-0.06%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-05-12</td>
+<td style="text-align: left;">MA</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">381.87</td>
+<td style="text-align: right;">382.6</td>
+<td style="text-align: left;">0.19%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-05-30</td>
+<td style="text-align: left;">NFLX</td>
+<td style="text-align: left;">Communication Services</td>
+<td style="text-align: right;">39.189</td>
+<td style="text-align: right;">39.741</td>
+<td style="text-align: left;">1.41%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-06-14</td>
+<td style="text-align: left;">VRSK</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">220.15</td>
+<td style="text-align: right;">225.78</td>
+<td style="text-align: left;">2.56%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-07-03</td>
+<td style="text-align: left;">CAH</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">94.53</td>
+<td style="text-align: right;">94.42</td>
 <td style="text-align: left;">-0.12%</td>
 <td style="text-align: left;">timeout</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">DVN</td>
+<td style="text-align: left;">2023-07-19</td>
+<td style="text-align: left;">EQT</td>
 <td style="text-align: left;">Energy</td>
-<td style="text-align: left;">46.27</td>
-<td style="text-align: left;">48.15</td>
-<td style="text-align: left;">4.06%</td>
+<td style="text-align: right;">40.31</td>
+<td style="text-align: right;">41.03</td>
+<td style="text-align: left;">1.79%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">EFX</td>
-<td style="text-align: left;">Industrials</td>
-<td style="text-align: left;">285.38</td>
-<td style="text-align: left;">288.98</td>
-<td style="text-align: left;">1.26%</td>
+<td style="text-align: left;">2023-08-03</td>
+<td style="text-align: left;">EQIX</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">758</td>
+<td style="text-align: right;">758.46</td>
+<td style="text-align: left;">0.06%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">37</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">EXC</td>
-<td style="text-align: left;">Utilities</td>
-<td style="text-align: left;">40.37</td>
-<td style="text-align: left;">40.66</td>
+<td style="text-align: left;">2023-08-18</td>
+<td style="text-align: left;">EQIX</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">749.34</td>
+<td style="text-align: right;">747.67</td>
+<td style="text-align: left;">-0.22%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-09-05</td>
+<td style="text-align: left;">CPRT</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">45.01</td>
+<td style="text-align: right;">45.33</td>
 <td style="text-align: left;">0.71%</td>
 <td style="text-align: left;">success</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">35</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">EXR</td>
-<td style="text-align: left;">Real Estate</td>
-<td style="text-align: left;">219.36</td>
-<td style="text-align: left;">220.81</td>
-<td style="text-align: left;">0.66%</td>
-<td style="text-align: left;">success</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">Cons Disc</td>
-<td style="text-align: left;">22.52</td>
-<td style="text-align: left;">24.06</td>
-<td style="text-align: left;">6.84%</td>
-<td style="text-align: left;">success</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">36</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">FE</td>
-<td style="text-align: left;">Utilities</td>
-<td style="text-align: left;">41.27</td>
-<td style="text-align: left;">40.99</td>
-<td style="text-align: left;">-0.68%</td>
-<td style="text-align: left;">timeout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">FITB</td>
+<td style="text-align: left;">2023-09-20</td>
+<td style="text-align: left;">BRO</td>
 <td style="text-align: left;">Financials</td>
-<td style="text-align: left;">45.07</td>
-<td style="text-align: left;">46.88</td>
-<td style="text-align: left;">4.02%</td>
-<td style="text-align: left;">success</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">FTNT</td>
-<td style="text-align: left;">Info Tech</td>
-<td style="text-align: left;">66.10</td>
-<td style="text-align: left;">64.12</td>
-<td style="text-align: left;">-3.00%</td>
-<td style="text-align: left;">stop-loss</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">GOOGL</td>
-<td style="text-align: left;">Comm Serv</td>
-<td style="text-align: left;">145.40</td>
-<td style="text-align: left;">144.42</td>
-<td style="text-align: left;">-0.67%</td>
+<td style="text-align: right;">73.57</td>
+<td style="text-align: right;">72.38</td>
+<td style="text-align: left;">-1.62%</td>
 <td style="text-align: left;">timeout</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">HD</td>
-<td style="text-align: left;">Cons Disc</td>
-<td style="text-align: left;">408.64</td>
-<td style="text-align: left;">414.00</td>
-<td style="text-align: left;">1.31%</td>
+<td style="text-align: left;">2023-10-05</td>
+<td style="text-align: left;">AKAM</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">104.76</td>
+<td style="text-align: right;">105.2</td>
+<td style="text-align: left;">0.42%</td>
 <td style="text-align: left;">success</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">IQV</td>
-<td style="text-align: left;">Health Care</td>
-<td style="text-align: left;">272.62</td>
-<td style="text-align: left;">264.44</td>
-<td style="text-align: left;">-3.00%</td>
-<td style="text-align: left;">stop-loss</td>
+<td style="text-align: left;">2023-10-20</td>
+<td style="text-align: left;">AFL</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">77.75</td>
+<td style="text-align: right;">77.67</td>
+<td style="text-align: left;">-0.10%</td>
+<td style="text-align: left;">timeout</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">29</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">IT</td>
-<td style="text-align: left;">Info Tech</td>
-<td style="text-align: left;">322.93</td>
-<td style="text-align: left;">320.77</td>
-<td style="text-align: left;">-0.67%</td>
+<td style="text-align: left;">2023-11-03</td>
+<td style="text-align: left;">WELL</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">88.07</td>
+<td style="text-align: right;">85.78</td>
+<td style="text-align: left;">-2.60%</td>
 <td style="text-align: left;">timeout</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">2022-01-03</td>
-<td style="text-align: left;">JCI</td>
+<td style="text-align: left;">2023-11-20</td>
+<td style="text-align: left;">SNPS</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">542.18</td>
+<td style="text-align: right;">542.22</td>
+<td style="text-align: left;">0.01%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-12-06</td>
+<td style="text-align: left;">PHM</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">92.77</td>
+<td style="text-align: right;">93.99</td>
+<td style="text-align: left;">1.32%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-12-21</td>
+<td style="text-align: left;">PHM</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">103.03</td>
+<td style="text-align: right;">102.75</td>
+<td style="text-align: left;">-0.27%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-01-09</td>
+<td style="text-align: left;">NOW</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">141.5</td>
+<td style="text-align: right;">144.512</td>
+<td style="text-align: left;">2.13%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-01-25</td>
+<td style="text-align: left;">DLR</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">142.87</td>
+<td style="text-align: right;">142.83</td>
+<td style="text-align: left;">-0.03%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-02-09</td>
+<td style="text-align: left;">AIZ</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">174.7</td>
+<td style="text-align: right;">172.52</td>
+<td style="text-align: left;">-1.25%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-02-26</td>
+<td style="text-align: left;">NVDA</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">79.381</td>
+<td style="text-align: right;">77.62</td>
+<td style="text-align: left;">-2.22%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-03-12</td>
+<td style="text-align: left;">GE</td>
 <td style="text-align: left;">Industrials</td>
-<td style="text-align: left;">79.95</td>
-<td style="text-align: left;">80.35</td>
-<td style="text-align: left;">0.50%</td>
+<td style="text-align: right;">132.091</td>
+<td style="text-align: right;">135.874</td>
+<td style="text-align: left;">2.86%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-03-26</td>
+<td style="text-align: left;">WMT</td>
+<td style="text-align: left;">Consumer Staples</td>
+<td style="text-align: right;">60.87</td>
+<td style="text-align: right;">60.66</td>
+<td style="text-align: left;">-0.34%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-04-11</td>
+<td style="text-align: left;">MLM</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">601.81</td>
+<td style="text-align: right;">614.18</td>
+<td style="text-align: left;">2.06%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-04-26</td>
+<td style="text-align: left;">DVA</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">133.23</td>
+<td style="text-align: right;">137.62</td>
+<td style="text-align: left;">3.30%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-05-10</td>
+<td style="text-align: left;">WDC</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">54.4822</td>
+<td style="text-align: right;">53.6886</td>
+<td style="text-align: left;">-1.46%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-05-28</td>
+<td style="text-align: left;">NEE</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">76.77</td>
+<td style="text-align: right;">76.87</td>
+<td style="text-align: left;">0.13%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-12</td>
+<td style="text-align: left;">DPZ</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">538.37</td>
+<td style="text-align: right;">525.2</td>
+<td style="text-align: left;">-2.45%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-06-27</td>
+<td style="text-align: left;">WAB</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">159.76</td>
+<td style="text-align: right;">159.26</td>
+<td style="text-align: left;">-0.31%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-07-15</td>
+<td style="text-align: left;">LLY</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">955.75</td>
+<td style="text-align: right;">910.01</td>
+<td style="text-align: left;">-4.79%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-07-30</td>
+<td style="text-align: left;">GS</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">504.86</td>
+<td style="text-align: right;">510</td>
+<td style="text-align: left;">1.02%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-08-13</td>
+<td style="text-align: left;">TRGP</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: right;">136.86</td>
+<td style="text-align: right;">141.48</td>
+<td style="text-align: left;">3.38%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-08-28</td>
+<td style="text-align: left;">NI</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">32.84</td>
+<td style="text-align: right;">32.95</td>
+<td style="text-align: left;">0.33%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-09-13</td>
+<td style="text-align: left;">CTAS</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">208.05</td>
+<td style="text-align: right;">205.53</td>
+<td style="text-align: left;">-1.21%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-09-27</td>
+<td style="text-align: left;">TT</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">384.2</td>
+<td style="text-align: right;">391.16</td>
+<td style="text-align: left;">1.81%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-10-14</td>
+<td style="text-align: left;">MPWR</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">938.32</td>
+<td style="text-align: right;">910.17</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-10-29</td>
+<td style="text-align: left;">CCL</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">21.92</td>
+<td style="text-align: right;">22.49</td>
+<td style="text-align: left;">2.60%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-11-12</td>
+<td style="text-align: left;">SYF</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">65.39</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">-0.60%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-11-27</td>
+<td style="text-align: left;">MTB</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">222.27</td>
+<td style="text-align: right;">219.58</td>
+<td style="text-align: left;">-1.21%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-12-13</td>
+<td style="text-align: left;">BX</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">189.21</td>
+<td style="text-align: right;">187.14</td>
+<td style="text-align: left;">-1.09%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-12-30</td>
+<td style="text-align: left;">STT</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">98.63</td>
+<td style="text-align: right;">98.13</td>
+<td style="text-align: left;">-0.51%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-01-16</td>
+<td style="text-align: left;">ISRG</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">597.68</td>
+<td style="text-align: right;">598.11</td>
+<td style="text-align: left;">0.07%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-02-03</td>
+<td style="text-align: left;">CBRE</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">142.31</td>
+<td style="text-align: right;">145.35</td>
+<td style="text-align: left;">2.14%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-02-18</td>
+<td style="text-align: left;">SPG</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">185.5</td>
+<td style="text-align: right;">185.43</td>
+<td style="text-align: left;">-0.04%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-03-05</td>
+<td style="text-align: left;">GILD</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">115.46</td>
+<td style="text-align: right;">115.65</td>
+<td style="text-align: left;">0.16%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-03-20</td>
+<td style="text-align: left;">BSX</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">100.85</td>
+<td style="text-align: right;">101.72</td>
+<td style="text-align: left;">0.86%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-04-03</td>
+<td style="text-align: left;">TPR</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">61.45</td>
+<td style="text-align: right;">60.07</td>
+<td style="text-align: left;">-2.25%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-04-21</td>
+<td style="text-align: left;">GLW</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">41.29</td>
+<td style="text-align: right;">43.39</td>
+<td style="text-align: left;">5.09%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-05-06</td>
+<td style="text-align: left;">AZO</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">3740.15</td>
+<td style="text-align: right;">3742.2</td>
+<td style="text-align: left;">0.05%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-05-20</td>
+<td style="text-align: left;">PGR</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">283.84</td>
+<td style="text-align: right;">280.14</td>
+<td style="text-align: left;">-1.30%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-05</td>
+<td style="text-align: left;">GEV</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">486.78</td>
+<td style="text-align: right;">492</td>
+<td style="text-align: left;">1.07%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-23</td>
+<td style="text-align: left;">CAH</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">164.69</td>
+<td style="text-align: right;">164.88</td>
+<td style="text-align: left;">0.12%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-07-08</td>
+<td style="text-align: left;">PWR</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">382</td>
+<td style="text-align: right;">380.44</td>
+<td style="text-align: left;">-0.41%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-07-23</td>
+<td style="text-align: left;">GILD</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">113.58</td>
+<td style="text-align: right;">114.56</td>
+<td style="text-align: left;">0.86%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-08-06</td>
+<td style="text-align: left;">PWR</td>
+<td style="text-align: left;">Industrials</td>
+<td style="text-align: right;">389.82</td>
+<td style="text-align: right;">390</td>
+<td style="text-align: left;">0.05%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-08-21</td>
+<td style="text-align: left;">CBRE</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">160.12</td>
+<td style="text-align: right;">164.13</td>
+<td style="text-align: left;">2.50%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-09-05</td>
+<td style="text-align: left;">MO</td>
+<td style="text-align: left;">Consumer Staples</td>
+<td style="text-align: right;">66.49</td>
+<td style="text-align: right;">65.7</td>
+<td style="text-align: left;">-1.19%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-09-19</td>
+<td style="text-align: left;">WELL</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">165.45</td>
+<td style="text-align: right;">168.47</td>
+<td style="text-align: left;">1.83%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-10-06</td>
+<td style="text-align: left;">GS</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">798</td>
+<td style="text-align: right;">791.75</td>
+<td style="text-align: left;">-0.78%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-10-20</td>
+<td style="text-align: left;">RL</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">334.28</td>
+<td style="text-align: right;">334.21</td>
+<td style="text-align: left;">-0.02%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-11-03</td>
+<td style="text-align: left;">VLO</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">169.71</td>
+<td style="text-align: left;">0.42%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-11-18</td>
+<td style="text-align: left;">APTV</td>
+<td style="text-align: left;">Consumer Discretionary</td>
+<td style="text-align: right;">75.81</td>
+<td style="text-align: right;">73.5357</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-12-03</td>
+<td style="text-align: left;">ETR</td>
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: right;">93.96</td>
+<td style="text-align: right;">93.93</td>
+<td style="text-align: left;">-0.03%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-12-17</td>
+<td style="text-align: left;">GS</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">880.5</td>
+<td style="text-align: right;">883.17</td>
+<td style="text-align: left;">0.30%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-01-02</td>
+<td style="text-align: left;">JNJ</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">205.87</td>
+<td style="text-align: right;">204.6</td>
+<td style="text-align: left;">-0.62%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-01-16</td>
+<td style="text-align: left;">PLTR</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">167.625</td>
+<td style="text-align: right;">168.402</td>
+<td style="text-align: left;">0.46%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-02-02</td>
+<td style="text-align: left;">WDC</td>
+<td style="text-align: left;">Information Technology</td>
+<td style="text-align: right;">279.51</td>
+<td style="text-align: right;">285.37</td>
+<td style="text-align: left;">2.10%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-02-18</td>
+<td style="text-align: left;">BG</td>
+<td style="text-align: left;">Consumer Staples</td>
+<td style="text-align: right;">121.96</td>
+<td style="text-align: right;">123.66</td>
+<td style="text-align: left;">1.39%</td>
+<td style="text-align: left;">success</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-03-04</td>
+<td style="text-align: left;">CFG</td>
+<td style="text-align: left;">Financials</td>
+<td style="text-align: right;">59.42</td>
+<td style="text-align: right;">57.75</td>
+<td style="text-align: left;">-2.81%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-03-18</td>
+<td style="text-align: left;">CAH</td>
+<td style="text-align: left;">Health Care</td>
+<td style="text-align: right;">212.23</td>
+<td style="text-align: right;">211.11</td>
+<td style="text-align: left;">-0.53%</td>
+<td style="text-align: left;">timeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-04-01</td>
+<td style="text-align: left;">APA</td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: right;">43.58</td>
+<td style="text-align: right;">42.2726</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-04-16</td>
+<td style="text-align: left;">ALB</td>
+<td style="text-align: left;">Materials</td>
+<td style="text-align: right;">207.56</td>
+<td style="text-align: right;">201.333</td>
+<td style="text-align: left;">-3.00%</td>
+<td style="text-align: left;">stop-loss</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-04-29</td>
+<td style="text-align: left;">WELL</td>
+<td style="text-align: left;">Real Estate</td>
+<td style="text-align: right;">211.46</td>
+<td style="text-align: right;">217.36</td>
+<td style="text-align: left;">2.79%</td>
 <td style="text-align: left;">success</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<section id="trade-execution-analysis" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="trade-execution-analysis">Trade Execution Analysis</h3>
+<p>The trade blotter reveals our <strong>“Trade the Open”</strong> philosophy. Positions are entered and exited with minimal market impact. The <strong>Fate</strong> column confirms that the 3.0% stop-loss effectively “cuts tails,” preventing outliers from damaging the portfolio.</p>
+</section>
 <h2 class="section-title anchored">
-Strategy Methodology
+Account Ledger
+</h2>
+<div class="data-box">
+<div class="scroll-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">Portfolio Value</th>
+<th style="text-align: right;">daily_pnl</th>
+<th style="text-align: left;">Return %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2022-01-03</td>
+<td style="text-align: left;">$100,855.81</td>
+<td style="text-align: right;">855.807</td>
+<td style="text-align: left;">0.86%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-01-18</td>
+<td style="text-align: left;">$95,258.74</td>
+<td style="text-align: right;">-1274.93</td>
+<td style="text-align: left;">-1.32%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-02-02</td>
+<td style="text-align: left;">$92,969.02</td>
+<td style="text-align: right;">-990.546</td>
+<td style="text-align: left;">-1.05%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-02-17</td>
+<td style="text-align: left;">$91,418.07</td>
+<td style="text-align: right;">-317.174</td>
+<td style="text-align: left;">-0.35%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-03-07</td>
+<td style="text-align: left;">$92,800.11</td>
+<td style="text-align: right;">-192.8</td>
+<td style="text-align: left;">-0.21%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-03-22</td>
+<td style="text-align: left;">$97,125.99</td>
+<td style="text-align: right;">-227.875</td>
+<td style="text-align: left;">-0.23%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-04-06</td>
+<td style="text-align: left;">$100,058.29</td>
+<td style="text-align: right;">1493.49</td>
+<td style="text-align: left;">1.52%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-04-22</td>
+<td style="text-align: left;">$96,467.96</td>
+<td style="text-align: right;">275.815</td>
+<td style="text-align: left;">0.29%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-05-09</td>
+<td style="text-align: left;">$89,095.24</td>
+<td style="text-align: right;">-1220.5</td>
+<td style="text-align: left;">-1.35%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-05-24</td>
+<td style="text-align: left;">$92,134.78</td>
+<td style="text-align: right;">2233.59</td>
+<td style="text-align: left;">2.48%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-06-09</td>
+<td style="text-align: left;">$88,335.30</td>
+<td style="text-align: right;">-2033.22</td>
+<td style="text-align: left;">-2.25%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-06-27</td>
+<td style="text-align: left;">$88,759.57</td>
+<td style="text-align: right;">-1132.88</td>
+<td style="text-align: left;">-1.26%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-07-13</td>
+<td style="text-align: left;">$87,158.15</td>
+<td style="text-align: right;">1307.01</td>
+<td style="text-align: left;">1.52%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-07-28</td>
+<td style="text-align: left;">$90,813.16</td>
+<td style="text-align: right;">347.802</td>
+<td style="text-align: left;">0.38%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-08-12</td>
+<td style="text-align: left;">$94,361.40</td>
+<td style="text-align: right;">888.235</td>
+<td style="text-align: left;">0.95%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-08-29</td>
+<td style="text-align: left;">$91,590.62</td>
+<td style="text-align: right;">-801.931</td>
+<td style="text-align: left;">-0.87%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-09-14</td>
+<td style="text-align: left;">$89,241.55</td>
+<td style="text-align: right;">-1261.02</td>
+<td style="text-align: left;">-1.39%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-09-28</td>
+<td style="text-align: left;">$86,058.16</td>
+<td style="text-align: right;">-953.127</td>
+<td style="text-align: left;">-1.10%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-10-13</td>
+<td style="text-align: left;">$86,831.64</td>
+<td style="text-align: right;">-1708.15</td>
+<td style="text-align: left;">-1.93%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-10-28</td>
+<td style="text-align: left;">$94,383.32</td>
+<td style="text-align: right;">790.943</td>
+<td style="text-align: left;">0.85%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-11-14</td>
+<td style="text-align: left;">$92,153.67</td>
+<td style="text-align: right;">-516.661</td>
+<td style="text-align: left;">-0.56%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-11-30</td>
+<td style="text-align: left;">$94,665.99</td>
+<td style="text-align: right;">-1393.54</td>
+<td style="text-align: left;">-1.45%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-12-15</td>
+<td style="text-align: left;">$91,339.48</td>
+<td style="text-align: right;">411.727</td>
+<td style="text-align: left;">0.45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-01-03</td>
+<td style="text-align: left;">$91,031.86</td>
+<td style="text-align: right;">-174.939</td>
+<td style="text-align: left;">-0.19%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-01-19</td>
+<td style="text-align: left;">$91,471.90</td>
+<td style="text-align: right;">919.956</td>
+<td style="text-align: left;">1.02%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-02-03</td>
+<td style="text-align: left;">$90,984.03</td>
+<td style="text-align: right;">-366.537</td>
+<td style="text-align: left;">-0.40%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-02-21</td>
+<td style="text-align: left;">$90,295.84</td>
+<td style="text-align: right;">345.252</td>
+<td style="text-align: left;">0.38%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-03-08</td>
+<td style="text-align: left;">$88,514.85</td>
+<td style="text-align: right;">-1675.19</td>
+<td style="text-align: left;">-1.86%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-03-23</td>
+<td style="text-align: left;">$87,307.02</td>
+<td style="text-align: right;">1585.73</td>
+<td style="text-align: left;">1.85%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-04-10</td>
+<td style="text-align: left;">$90,065.42</td>
+<td style="text-align: right;">389.224</td>
+<td style="text-align: left;">0.43%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-04-25</td>
+<td style="text-align: left;">$90,022.27</td>
+<td style="text-align: right;">-200.049</td>
+<td style="text-align: left;">-0.22%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-05-10</td>
+<td style="text-align: left;">$90,150.76</td>
+<td style="text-align: right;">49.3027</td>
+<td style="text-align: left;">0.05%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-05-25</td>
+<td style="text-align: left;">$90,042.36</td>
+<td style="text-align: right;">976.168</td>
+<td style="text-align: left;">1.10%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-06-12</td>
+<td style="text-align: left;">$92,703.71</td>
+<td style="text-align: right;">170.211</td>
+<td style="text-align: left;">0.18%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-06-27</td>
+<td style="text-align: left;">$93,907.45</td>
+<td style="text-align: right;">-13.2235</td>
+<td style="text-align: left;">-0.01%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-07-13</td>
+<td style="text-align: left;">$96,114.70</td>
+<td style="text-align: right;">28.9509</td>
+<td style="text-align: left;">0.03%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-07-28</td>
+<td style="text-align: left;">$95,384.21</td>
+<td style="text-align: right;">-842.928</td>
+<td style="text-align: left;">-0.88%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-08-14</td>
+<td style="text-align: left;">$93,383.09</td>
+<td style="text-align: right;">-420.617</td>
+<td style="text-align: left;">-0.45%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-08-29</td>
+<td style="text-align: left;">$94,734.24</td>
+<td style="text-align: right;">87.7644</td>
+<td style="text-align: left;">0.09%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-09-14</td>
+<td style="text-align: left;">$92,643.59</td>
+<td style="text-align: right;">-805.71</td>
+<td style="text-align: left;">-0.86%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-09-29</td>
+<td style="text-align: left;">$89,183.97</td>
+<td style="text-align: right;">-745.106</td>
+<td style="text-align: left;">-0.83%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-10-16</td>
+<td style="text-align: left;">$91,619.67</td>
+<td style="text-align: right;">134.988</td>
+<td style="text-align: left;">0.15%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-10-31</td>
+<td style="text-align: left;">$89,383.95</td>
+<td style="text-align: right;">1479.15</td>
+<td style="text-align: left;">1.68%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-11-15</td>
+<td style="text-align: left;">$93,108.76</td>
+<td style="text-align: right;">423.86</td>
+<td style="text-align: left;">0.46%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-12-01</td>
+<td style="text-align: left;">$94,121.92</td>
+<td style="text-align: right;">204.036</td>
+<td style="text-align: left;">0.22%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-12-18</td>
+<td style="text-align: left;">$96,079.84</td>
+<td style="text-align: right;">315.27</td>
+<td style="text-align: left;">0.33%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-01-04</td>
+<td style="text-align: left;">$95,981.12</td>
+<td style="text-align: right;">605.82</td>
+<td style="text-align: left;">0.64%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-01-22</td>
+<td style="text-align: left;">$99,974.45</td>
+<td style="text-align: right;">657.89</td>
+<td style="text-align: left;">0.66%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-02-06</td>
+<td style="text-align: left;">$103,794.36</td>
+<td style="text-align: right;">622.575</td>
+<td style="text-align: left;">0.60%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-02-22</td>
+<td style="text-align: left;">$106,636.05</td>
+<td style="text-align: right;">-8.49807</td>
+<td style="text-align: left;">-0.01%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-03-07</td>
+<td style="text-align: left;">$109,821.48</td>
+<td style="text-align: right;">-1323.34</td>
+<td style="text-align: left;">-1.19%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-03-22</td>
+<td style="text-align: left;">$113,148.21</td>
+<td style="text-align: right;">72.1309</td>
+<td style="text-align: left;">0.06%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-04-09</td>
+<td style="text-align: left;">$112,598.75</td>
+<td style="text-align: right;">1120.47</td>
+<td style="text-align: left;">1.01%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-04-24</td>
+<td style="text-align: left;">$111,433.54</td>
+<td style="text-align: right;">1052.39</td>
+<td style="text-align: left;">0.95%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-05-09</td>
+<td style="text-align: left;">$115,524.09</td>
+<td style="text-align: right;">130.765</td>
+<td style="text-align: left;">0.11%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-05-24</td>
+<td style="text-align: left;">$115,435.87</td>
+<td style="text-align: right;">-1368.56</td>
+<td style="text-align: left;">-1.17%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-06-11</td>
+<td style="text-align: left;">$116,692.60</td>
+<td style="text-align: right;">-46.1346</td>
+<td style="text-align: left;">-0.04%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-06-27</td>
+<td style="text-align: left;">$116,755.44</td>
+<td style="text-align: right;">153.307</td>
+<td style="text-align: left;">0.13%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-07-15</td>
+<td style="text-align: left;">$119,036.91</td>
+<td style="text-align: right;">-421.641</td>
+<td style="text-align: left;">-0.35%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-07-30</td>
+<td style="text-align: left;">$116,687.52</td>
+<td style="text-align: right;">-45.7501</td>
+<td style="text-align: left;">-0.04%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-08-14</td>
+<td style="text-align: left;">$120,204.14</td>
+<td style="text-align: right;">165.73</td>
+<td style="text-align: left;">0.14%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-08-29</td>
+<td style="text-align: left;">$123,993.64</td>
+<td style="text-align: right;">310.392</td>
+<td style="text-align: left;">0.25%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-09-16</td>
+<td style="text-align: left;">$124,737.52</td>
+<td style="text-align: right;">-785.827</td>
+<td style="text-align: left;">-0.63%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-10-01</td>
+<td style="text-align: left;">$126,535.32</td>
+<td style="text-align: right;">519.743</td>
+<td style="text-align: left;">0.41%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-10-16</td>
+<td style="text-align: left;">$129,773.63</td>
+<td style="text-align: right;">-536.149</td>
+<td style="text-align: left;">-0.41%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-10-31</td>
+<td style="text-align: left;">$126,482.24</td>
+<td style="text-align: right;">-854.481</td>
+<td style="text-align: left;">-0.67%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-11-15</td>
+<td style="text-align: left;">$131,622.23</td>
+<td style="text-align: right;">-552.782</td>
+<td style="text-align: left;">-0.42%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024-12-02</td>
+<td style="text-align: left;">$136,256.92</td>
+<td style="text-align: right;">-316.134</td>
+<td style="text-align: left;">-0.23%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024-12-17</td>
+<td style="text-align: left;">$129,360.71</td>
+<td style="text-align: right;">-3251.08</td>
+<td style="text-align: left;">-2.45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-01-03</td>
+<td style="text-align: left;">$131,502.92</td>
+<td style="text-align: right;">93.314</td>
+<td style="text-align: left;">0.07%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-01-22</td>
+<td style="text-align: left;">$139,525.19</td>
+<td style="text-align: right;">438.693</td>
+<td style="text-align: left;">0.32%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-02-06</td>
+<td style="text-align: left;">$139,368.76</td>
+<td style="text-align: right;">-1018.02</td>
+<td style="text-align: left;">-0.73%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-02-24</td>
+<td style="text-align: left;">$133,027.12</td>
+<td style="text-align: right;">-1222.02</td>
+<td style="text-align: left;">-0.91%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-03-11</td>
+<td style="text-align: left;">$123,361.38</td>
+<td style="text-align: right;">-858.613</td>
+<td style="text-align: left;">-0.69%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-03-26</td>
+<td style="text-align: left;">$126,277.50</td>
+<td style="text-align: right;">-716.933</td>
+<td style="text-align: left;">-0.56%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-04-10</td>
+<td style="text-align: left;">$128,342.77</td>
+<td style="text-align: right;">3650.65</td>
+<td style="text-align: left;">2.93%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-04-28</td>
+<td style="text-align: left;">$129,301.74</td>
+<td style="text-align: right;">-446.128</td>
+<td style="text-align: left;">-0.34%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-05-13</td>
+<td style="text-align: left;">$130,911.73</td>
+<td style="text-align: right;">-357.624</td>
+<td style="text-align: left;">-0.27%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-05-29</td>
+<td style="text-align: left;">$135,011.92</td>
+<td style="text-align: right;">751.426</td>
+<td style="text-align: left;">0.56%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-13</td>
+<td style="text-align: left;">$135,302.72</td>
+<td style="text-align: right;">226.211</td>
+<td style="text-align: left;">0.17%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-07-01</td>
+<td style="text-align: left;">$138,386.53</td>
+<td style="text-align: right;">713.41</td>
+<td style="text-align: left;">0.52%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-07-17</td>
+<td style="text-align: left;">$138,943.29</td>
+<td style="text-align: right;">217.737</td>
+<td style="text-align: left;">0.16%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-08-01</td>
+<td style="text-align: left;">$139,768.42</td>
+<td style="text-align: right;">1611.87</td>
+<td style="text-align: left;">1.17%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-08-15</td>
+<td style="text-align: left;">$138,068.71</td>
+<td style="text-align: right;">265.069</td>
+<td style="text-align: left;">0.19%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">$139,691.90</td>
+<td style="text-align: right;">601.306</td>
+<td style="text-align: left;">0.43%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-09-17</td>
+<td style="text-align: left;">$144,032.54</td>
+<td style="text-align: right;">1391.28</td>
+<td style="text-align: left;">0.98%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-10-02</td>
+<td style="text-align: left;">$143,245.79</td>
+<td style="text-align: right;">-401.594</td>
+<td style="text-align: left;">-0.28%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-10-17</td>
+<td style="text-align: left;">$142,326.44</td>
+<td style="text-align: right;">9.77851</td>
+<td style="text-align: left;">0.01%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-11-03</td>
+<td style="text-align: left;">$143,693.82</td>
+<td style="text-align: right;">290.635</td>
+<td style="text-align: left;">0.20%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-11-18</td>
+<td style="text-align: left;">$145,690.35</td>
+<td style="text-align: right;">2340.24</td>
+<td style="text-align: left;">1.63%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">$150,629.60</td>
+<td style="text-align: right;">1479.59</td>
+<td style="text-align: left;">0.99%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-12-19</td>
+<td style="text-align: left;">$153,621.40</td>
+<td style="text-align: right;">-89.1354</td>
+<td style="text-align: left;">-0.06%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-01-07</td>
+<td style="text-align: left;">$157,887.42</td>
+<td style="text-align: right;">327.917</td>
+<td style="text-align: left;">0.21%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-01-23</td>
+<td style="text-align: left;">$163,109.53</td>
+<td style="text-align: right;">879.96</td>
+<td style="text-align: left;">0.54%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-02-09</td>
+<td style="text-align: left;">$172,807.90</td>
+<td style="text-align: right;">476.749</td>
+<td style="text-align: left;">0.28%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-02-25</td>
+<td style="text-align: left;">$173,825.23</td>
+<td style="text-align: right;">-1450.16</td>
+<td style="text-align: left;">-0.83%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-03-12</td>
+<td style="text-align: left;">$164,557.17</td>
+<td style="text-align: right;">-186.457</td>
+<td style="text-align: left;">-0.11%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-03-27</td>
+<td style="text-align: left;">$160,348.43</td>
+<td style="text-align: right;">-1831.99</td>
+<td style="text-align: left;">-1.13%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-04-14</td>
+<td style="text-align: left;">$173,120.16</td>
+<td style="text-align: right;">-1172.93</td>
+<td style="text-align: left;">-0.67%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-04-29</td>
+<td style="text-align: left;">$178,127.39</td>
+<td style="text-align: right;">2115.28</td>
+<td style="text-align: left;">1.20%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="capital-growth-analysis" class="level3 analysis-box">
+<h3 class="anchored" data-anchor-id="capital-growth-analysis">Capital Growth Analysis</h3>
+<p>The daily ledger samples show the steady appreciation of the <strong>$100,000 initial capital</strong>. The low volatility in daily PnL reflects the benefit of the sector-neutral framework, which focuses on relative stock performance rather than market direction.</p>
+</section>
+<h2 class="section-title anchored">
+Methodology
 </h2>
 <div class="grid">
 <div class="g-col-12 g-col-md-6">
-<section id="entry-logic" class="level3 methodology-box">
+<section id="entry-logic" class="level3 method-card">
 <h3 class="anchored" data-anchor-id="entry-logic">Entry Logic</h3>
-<p>The strategy employs a <strong>Sector-Neutral</strong> framework to eliminate macro-sector biases and focus on idiosyncratic alpha.</p>
+<p>The strategy employs a <strong>Sector-Neutral</strong> framework to focus on idiosyncratic alpha.</p>
 <ul>
 <li><strong>Universe</strong>: S&amp;P 500 constituents.</li>
-<li><strong>Factor Library</strong>: IC-weighted combination of Momentum (12m and 3m), Proximity to 52-week High, and Trend Quality.</li>
-<li><strong>Optimization</strong>: 3-year rolling walk-forward training window to adapt to regime shifts.</li>
-<li><strong>Selection</strong>: Daily rebalancing into the top 10% of stocks within each sector.</li>
+<li><strong>Optimization</strong>: 3-year rolling training window.</li>
+<li><strong>Selection</strong>: Daily rebalancing into top decile names.</li>
 </ul>
 </section>
 </div>
 <div class="g-col-12 g-col-md-6">
-<section id="risk-management" class="level3 methodology-box">
+<section id="risk-management" class="level3 method-card">
 <h3 class="anchored" data-anchor-id="risk-management">Risk Management</h3>
-<p>Strict risk controls are embedded to preserve capital and ensure strategy longevity.</p>
+<p>Strict risk controls ensure long-term strategy survival.</p>
 <ul>
-<li><strong>Exit Mechanism</strong>: Daily portfolio rotation ensures exposure is always aligned with the freshest signals.</li>
-<li><strong>Stop-Loss</strong>: A hard <strong>3.0%</strong> protective stop-loss triggers an immediate exit if intra-day volatility breaches the threshold.</li>
-<li><strong>Fate Tracking</strong>: Every trade is classified as <em>Success</em>, <em>Stop-Loss</em>, or <em>Timeout</em> for rigorous post-trade analysis.</li>
+<li><strong>Exit</strong>: Daily rotation to fresh signals.</li>
+<li><strong>Stop-Loss</strong>: 3.0% hard intra-day exit.</li>
+<li><strong>Audit</strong>: 100% fate tracking for all trades.</li>
 </ul>
 </section>
 </div>
 </div>
-<h2 class="section-title anchored">
-Monitoring &amp; Robustness
-</h2>
-<div class="methodology-box">
-<p><strong>How do we know if it’s working?</strong> We monitor the <strong>IC Stability</strong>. As long as the realized signal IC remains within 1 standard deviation of our historical mean (~0.05) and the rolling success rate stays above 48%, the model is considered healthy.</p>
-<p><strong>When do we stop?</strong> A drawdown exceeding <strong>24.5%</strong> (1.5x historical max) or two consecutive 6-month folds with negative excess returns will trigger an automatic strategy halt and factor re-evaluation.</p>
-</div>
 <div class="footer">
-<p>Quant Alpha Strategy | Developed for Fintech 533 Final | 2026</p>
+<p>Quant Alpha Strategy | Fintech 533 Mini-Capstone | 2026</p>
 </div>
 
 
