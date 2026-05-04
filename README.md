@@ -50,13 +50,14 @@ Every trade is assigned one of three "fates":
 ### Key Metrics (Backtest Results 2022-2026)
 | Metric | Value |
 | :--- | :--- |
+| **Total Return** | 78.13% |
 | **Sharpe Ratio** | 0.92 |
-| **Annualized Return** | 14.36% |
+| **Annualized Return (CAGR)** | 14.36% |
 | **Max Drawdown** | -16.36% |
 | **Expected Return per Trade** | 0.06% |
 | **Average Trade Lifetime** | 1.0 Day |
-| **Hit Rate (Daily)** | 53.78% |
-| **Success Rate (Trade)** | 51.94% |
+| **Daily Hit Rate** | 53.78% |
+| **Trade Success Rate** | 51.94% |
 | **Timeout Rate** | 39.71% |
 | **Stop-Loss Rate** | 8.35% |
 
@@ -67,7 +68,7 @@ Every trade is assigned one of three "fates":
 - **Hit Rate Monitoring**: We expect a success rate of ~49%. If the realized success rate over a 3-month rolling window stays significantly below 45%, it suggests a regime shift.
 
 **2. How will we quantify when the strategy stops working?**
-- **Drawdown Limit**: If the strategy experiences a drawdown exceeding **1.5x** the backtest max drawdown (i.e., > 28.8%), we will stop the strategy for re-evaluation.
+- **Drawdown Limit**: If the strategy experiences a drawdown exceeding **1.5x** the backtest max drawdown (i.e., > 24.5%), we will stop the strategy for re-evaluation.
 - **Factor Decay**: If the IC-weighted combined score yields a negative 6-month cumulative return for two consecutive folds, we consider the factor model "broken" or "decayed" and will halt trading to update the factor library.
 
 ## Project Layout
