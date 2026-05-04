@@ -4,8 +4,8 @@ page-layout: full
 ---
 
 ::: {.hero-section}
-# Institutional Alpha
-### S&P 500 Sector-Neutral Walk-Forward
+# S&P 500 Sector-Neutral Walk-Forward
+### Institutional Alpha
 <p>Trade the open. Let factors decide.</p>
 :::
 
